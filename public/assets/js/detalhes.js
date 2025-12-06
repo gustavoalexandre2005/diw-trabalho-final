@@ -12,7 +12,7 @@ class GerenciadorDetalhes {
                 tecnica: "Óleo sobre tela",
                 dimensoes: "85 cm × 72 cm",
                 localizacao: "MALBA – Museu de Arte Latino-Americana de Buenos Aires",
-                imagem: "imagens/abaporu.png",
+                imagem: "/imagens/abaporu.png",
                 wikipedia: "https://pt.wikipedia.org/wiki/Abaporu",
                 coordenadas: { lat: -34.5802, lng: -58.4109 },
                 descricao: "Criada em 1928 por Tarsila do Amaral, a obra Abaporu é um dos maiores símbolos do modernismo brasileiro."
@@ -25,7 +25,7 @@ class GerenciadorDetalhes {
                 tecnica: "Óleo sobre madeira de álamo",
                 dimensoes: "77 cm × 53 cm",
                 localizacao: "Museu do Louvre, Paris",
-                imagem: "imagens/monalisa.png",
+                imagem: "/imagens/monalisa.png",
                 wikipedia: "https://pt.wikipedia.org/wiki/Mona_Lisa",
                 coordenadas: { lat: 48.8606, lng: 2.3376 },
                 descricao: "Pintada entre 1503 e 1506 por Leonardo da Vinci, a Mona Lisa é considerada a pintura mais famosa do mundo."

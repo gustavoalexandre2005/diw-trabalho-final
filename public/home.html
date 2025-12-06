@@ -3,120 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Obras de Arte</title>
+    <title>Artes Famosas - Galeria com Easter Eggs 🎨</title>
     <link rel="stylesheet" href="assets/css/home.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- ===================== CABEÇALHO ===================== -->
-    <header>
-        <div id="logo">Trabalho Prático 1</div>
-        <h1>Artes Famosas</h1>
-
-        <div class="header-buttons">
-            <a href="../public/login.html"><button>Login</button></a>
+    <!-- ===== HEADER ===== -->
+    <header id="header">
+        <div class="logo" id="logo" title="Clique 7x para surpresa 🎁">
+            <div class="logo-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                </svg>
+            </div>
+            <span>Artes Famosas</span>
+            <span class="click-counter" id="clickCounter"></span>
+        </div>
+        
+        <div class="user-menu">
+            <span class="user-name" id="userName">Visitante</span>
+            <span class="dev-badge" id="devBadge">DEV MODE</span>
+            <button class="btn-logout" onclick="logout()">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/>
+                </svg>
+                Sair
+            </button>
         </div>
     </header>
 
-    <!-- ===================== CONTEÚDO PRINCIPAL ===================== -->
+    <!-- ===== EASTER EGG NOTIFICATION ===== -->
+    <div class="easter-egg-notification" id="easterEggNotification">
+        🎮 KONAMI CODE ATIVADO! 🎨
+    </div>
+
+    <!-- ===== MAIN ===== -->
     <main>
-        <div class="layout-superior">
-            <!-- ===================== ASIDE ===================== -->
-            <aside>
-                <h2>Informações Gerais</h2>
-                <section>
-                    <h4>Abaporu</h4>
-                    <ul>
-                        <li><strong>Autor:</strong> Tarsila do Amaral</li>
-                        <li><strong>Data:</strong> 1928</li>
-                        <li><strong>Técnica:</strong> Óleo sobre tela</li>
-                        <li><strong>Dimensões:</strong> 85 cm x 72 cm</li>
-                        <li><strong>Localização:</strong> MALBA</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h4>Mona Lisa</h4>
-                    <ul>
-                        <li><strong>Autor:</strong> Leonardo Da Vinci</li>
-                        <li><strong>Data:</strong> 1503-1506</li>
-                        <li><strong>Técnica:</strong> Óleo sobre madeira de álamo</li>
-                        <li><strong>Dimensões:</strong> 77 cm x 53 cm</li>
-                        <li><strong>Localização:</strong> Museu do Louvre</li>
-                    </ul>
-                </section>
-
-                <p>Fonte da pesquisa:</p>
-                <a href="https://pt.wikipedia.org/wiki/Wikip%C3%A9dia:P%C3%A1gina_principal" target="_blank">
-                    <button>Wikipédia</button>
-                </a>
-            </aside>
-
-            <!-- ===================== CARROSSEL ===================== -->
-            <div class="carrossel-container">
-                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></button>
-                    </div>
-
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <a href="https://pt.wikipedia.org/wiki/Abaporu" target="_blank">
-                                <img src="imagens/abaporu.png" class="d-block w-100 carrossel-img" alt="Abaporu">
-                            </a>
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Abaporu</h5>
-                                <p>Pintura de Tarsila do Amaral</p>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <a href="https://pt.wikipedia.org/wiki/Mona_Lisa" target="_blank">
-                                <img src="imagens/monalisa.png" class="d-block w-100 carrossel-img" alt="Mona Lisa">
-                            </a>
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Mona Lisa</h5>
-                                <p>Pintura de Leonardo da Vinci</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                        <span class="visually-hidden">Anterior</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                        <span class="visually-hidden">Próximo</span>
-                    </button>
-                </div>
-
-                <!-- Botão de detalhes abaixo do carrossel -->
-                <div class="botao-detalhes text-center mt-3">
-                    <a href="../public/detalhes.html"><button>Ver Detalhes</button></a>
-                </div>
+        <!-- ===== CARROSSEL ===== -->
+        <section class="carousel-container">
+            <h2 class="section-title">Destaques</h2>
+            
+            <div class="carousel">
+                <div class="carousel-track" id="carouselTrack"></div>
             </div>
+
+            <div class="carousel-controls">
+                <button class="carousel-btn" onclick="prevSlide()">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                    Anterior
+                </button>
+                <button class="btn-add-slide" onclick="openModal()">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                    </svg>
+                    Adicionar Obra
+                </button>
+                <button class="carousel-btn" onclick="nextSlide()">
+                    Próximo
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- ===== TABS ===== -->
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('all')">
+                Todas as Obras (<span id="todasCount">0</span>)
+            </button>
+            <button class="tab" onclick="showTab('favorites')">
+                Favoritos (<span id="favoritosCount">0</span>)
+            </button>
         </div>
 
-        <!-- ===================== RESUMOS ===================== -->
-        <div class="resumos-obras">
-            <div class="resumo resumo-esquerda">
-                <h3>Resumo: Abaporu</h3>
-                <p>"Abaporu", pintado por Tarsila do Amaral em 1928, é uma das obras mais icônicas do modernismo brasileiro. A pintura representa uma figura humana estilizada com membros desproporcionais, refletindo a busca por uma identidade artística nacional.</p>
-            </div>
+        <!-- ===== TODAS AS OBRAS ===== -->
+        <div id="allTab" class="tab-content active">
+            <div class="obras-grid" id="obrasGrid"></div>
+        </div>
 
-            <div class="resumo resumo-direita">
-                <h3>Resumo: Mona Lisa</h3>
-                <p>A "Mona Lisa", de Leonardo da Vinci, é uma das pinturas mais famosas do mundo. Criada no início do século XVI, a obra é conhecida por seu enigmático sorriso e pela técnica revolucionária do sfumato.</p>
-            </div>
+        <!-- ===== FAVORITOS ===== -->
+        <div id="favoritesTab" class="tab-content">
+            <div class="obras-grid" id="favoritosGrid"></div>
         </div>
     </main>
 
+    <!-- ===== MODAL DE OBRA ===== -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Adicionar Obra</h2>
+                <button class="btn-close" onclick="closeModal()">×</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Título da Obra</label>
+                    <input type="text" id="obraTitulo" placeholder="Ex: Abaporu">
+                </div>
+
+                <div class="form-group">
+                    <label>Artista</label>
+                    <input type="text" id="obraArtista" placeholder="Ex: Tarsila do Amaral">
+                </div>
+
+                <div class="form-group">
+                    <label>Descrição</label>
+                    <textarea id="obraDescricao" placeholder="Descreva a obra..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>URL da Imagem</label>
+                    <input type="url" id="obraImagem" placeholder="https://exemplo.com/imagem.jpg">
+                </div>
+
+                <div class="modal-actions">
+                    <button class="btn-primary" onclick="saveObra()">Salvar</button>
+                    <button class="btn-secondary" onclick="closeModal()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== MODAL DE LOGIN DEV ===== -->
+    <div class="modal" id="devLoginModal">
+        <div class="modal-content dev-login">
+            <div class="dev-login-header">
+                <div class="dev-icon">🔓</div>
+                <h2>Login de Desenvolvedor</h2>
+                <p>Digite a senha secreta para desbloquear o modo dev</p>
+            </div>
+
+            <div class="modal-body">
+                <div class="form-group">
+                    <input 
+                        type="password" 
+                        id="devPassword" 
+                        placeholder="Digite a senha..."
+                        class="dev-password-input"
+                    >
+                    <p class="dev-hint">💡 Dica: Nome da artista brasileira + ano (ex: artista2024)</p>
+                </div>
+
+                <div class="modal-actions">
+                    <button class="btn-primary" onclick="handleDevLogin()">Entrar</button>
+                    <button class="btn-secondary" onclick="closeDevLogin()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
     <footer>
-        &copy; 2025 - Página de estudo sobre artes famosas
+        <p>💡 Dicas: Tente o código Konami (↑↑↓↓←→←→BA) ou clique 7x na logo!</p>
+        <p class="dev-status" id="devStatus">✅ Modo Dev Ativo - Você pode editar tudo agora!</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/home.js"></script>
 </body>
 </html>

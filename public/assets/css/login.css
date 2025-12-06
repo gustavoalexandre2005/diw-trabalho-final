@@ -48,7 +48,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('public/imagens/mclovin1.jpg');
+  background-image: url('/imagens/leoncio.png');
   background-size: cover;
   background-position: center;
   filter: contrast(.92) brightness(.96);
