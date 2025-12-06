@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obras de Arte</title>
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- ===================== CABEÇALHO ===================== -->
+    <header>
+        <div id="logo">Trabalho Prático 1</div>
+        <h1>Artes Famosas</h1>
+
+        <div class="header-buttons">
+            <a href="../public/login.html"><button>Login</button></a>
+        </div>
+    </header>
+
+    <!-- ===================== CONTEÚDO PRINCIPAL ===================== -->
+    <main>
+        <div class="layout-superior">
+            <!-- ===================== ASIDE ===================== -->
+            <aside>
+                <h2>Informações Gerais</h2>
+                <section>
+                    <h4>Abaporu</h4>
+                    <ul>
+                        <li><strong>Autor:</strong> Tarsila do Amaral</li>
+                        <li><strong>Data:</strong> 1928</li>
+                        <li><strong>Técnica:</strong> Óleo sobre tela</li>
+                        <li><strong>Dimensões:</strong> 85 cm x 72 cm</li>
+                        <li><strong>Localização:</strong> MALBA</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h4>Mona Lisa</h4>
+                    <ul>
+                        <li><strong>Autor:</strong> Leonardo Da Vinci</li>
+                        <li><strong>Data:</strong> 1503-1506</li>
+                        <li><strong>Técnica:</strong> Óleo sobre madeira de álamo</li>
+                        <li><strong>Dimensões:</strong> 77 cm x 53 cm</li>
+                        <li><strong>Localização:</strong> Museu do Louvre</li>
+                    </ul>
+                </section>
+
+                <p>Fonte da pesquisa:</p>
+                <a href="https://pt.wikipedia.org/wiki/Wikip%C3%A9dia:P%C3%A1gina_principal" target="_blank">
+                    <button>Wikipédia</button>
+                </a>
+            </aside>
+
+            <!-- ===================== CARROSSEL ===================== -->
+            <div class="carrossel-container">
+                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></button>
+                    </div>
+
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <a href="https://pt.wikipedia.org/wiki/Abaporu" target="_blank">
+                                <img src="imagens/abaporu.png" class="d-block w-100 carrossel-img" alt="Abaporu">
+                            </a>
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Abaporu</h5>
+                                <p>Pintura de Tarsila do Amaral</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <a href="https://pt.wikipedia.org/wiki/Mona_Lisa" target="_blank">
+                                <img src="imagens/monalisa.png" class="d-block w-100 carrossel-img" alt="Mona Lisa">
+                            </a>
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Mona Lisa</h5>
+                                <p>Pintura de Leonardo da Vinci</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                        <span class="visually-hidden">Próximo</span>
+                    </button>
+                </div>
+
+                <!-- Botão de detalhes abaixo do carrossel -->
+                <div class="botao-detalhes text-center mt-3">
+                    <a href="../public/detalhes.html"><button>Ver Detalhes</button></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===================== RESUMOS ===================== -->
+        <div class="resumos-obras">
+            <div class="resumo resumo-esquerda">
+                <h3>Resumo: Abaporu</h3>
+                <p>"Abaporu", pintado por Tarsila do Amaral em 1928, é uma das obras mais icônicas do modernismo brasileiro. A pintura representa uma figura humana estilizada com membros desproporcionais, refletindo a busca por uma identidade artística nacional.</p>
+            </div>
+
+            <div class="resumo resumo-direita">
+                <h3>Resumo: Mona Lisa</h3>
+                <p>A "Mona Lisa", de Leonardo da Vinci, é uma das pinturas mais famosas do mundo. Criada no início do século XVI, a obra é conhecida por seu enigmático sorriso e pela técnica revolucionária do sfumato.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2025 - Página de estudo sobre artes famosas
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
