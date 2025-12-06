@@ -1,163 +1,168 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artes Famosas - Galeria com Easter Eggs 🎨</title>
-    <link rel="stylesheet" href="assets/css/home.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artes Famosas - Galeria com Easter Eggs 🎨</title>
+    <link rel="stylesheet" href="assets/css/home.css">
 </head>
 <body>
-    <!-- ===== HEADER ===== -->
-    <header id="header">
-        <div class="logo" id="logo" title="">
-            <div class="logo-icon">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s\4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
-                </svg>
-            </div>
-            <span>Artes Famosas</span>
-            <span class="click-counter" id="clickCounter"></span>
-        </div>
-        
-        <div class="user-menu">
-            <span class="user-name" id="userName"></span>
-            <span class="dev-badge" id="devBadge">DEV MODE</span>
-            <button class="btn-logout" onclick="logout()">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/>
-                </svg>
-                Sair
-            </button>
-        </div>
-    </header>
+    <header id="header">
+        <div class="logo" id="logo" title="Clique 7x para Login Dev">
+            <div class="logo-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                </svg>
+            </div>
+            <span>Artes Famosas</span>
+            <span class="click-counter" id="clickCounter"></span>
+        </div>
+        
+        <div class="user-menu">
+            <span class="user-name" id="userName">Visitante</span>
+            <span class="dev-badge" id="devBadge">DEV MODE</span>
+            <button class="btn-logout" onclick="logout()">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/>
+                </svg>
+                Sair
+            </button>
+        </div>
+    </header>
 
-    <!-- ===== EASTER EGG NOTIFICATION ===== -->
-    <div class="easter-egg-notification" id="easterEggNotification">
-         KONAMI CODE ATIVADO! 
-    </div>
+    <div class="easter-egg-notification" id="easterEggNotification">
+        KONAMI CODE ATIVADO! 
+    </div>
 
-    <!-- ===== MAIN ===== -->
-    <main>
-        <!-- ===== CARROSSEL ===== -->
-        <section class="carousel-container">
-            <h2 class="section-title">Destaques</h2>
-            
-            <div class="carousel">
-                <div class="carousel-track" id="carouselTrack"></div>
-            </div>
+    <main>
+        <button class="btn-primary btn-fixed-add" id="btnAddObra" style="display: none;" onclick="openCardModal(null)">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+            Adicionar Card
+        </button>
+        
+                <section class="search-bar-container">
+            <div class="search-bar">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="search-icon">
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                </svg>
+                <input type="text" id="searchInput" placeholder="Pesquisar por título ou artista..." onkeyup="filterObras()">
+            </div>
+        </section>
+                <section class="carousel-container">
+            <h2 class="section-title">Destaques</h2>
+            
+            <div class="carousel">
+                <div class="carousel-track" id="carouselTrack"></div>
+            </div>
 
-            <div class="carousel-controls">
-                <button class="carousel-btn" onclick="prevSlide()">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-                    </svg>
-                    Anterior
-                </button>
-                <button class="btn-add-slide" onclick="openModal()">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
-                    </svg>
-                    Adicionar Obra
-                </button>
-                <button class="carousel-btn" onclick="nextSlide()">
-                    Próximo
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
-                    </svg>
-                </button>
-            </div>
-        </section>
+            <div class="carousel-controls">
+                <button class="carousel-btn" onclick="prevSlide()">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                    Anterior
+                </button>
+                
+                <button class="carousel-btn" onclick="nextSlide()">
+                    Próximo
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    </svg>
+                </button>
+            </div>
+        </section>
 
-        <!-- ===== TABS ===== -->
-        <div class="tabs">
-            <button class="tab active" onclick="showTab('all')">
-                Todas as Obras (<span id="todasCount">0</span>)
-            </button>
-            <button class="tab" onclick="showTab('favorites')">
-                Favoritos (<span id="favoritosCount">0</span>)
-            </button>
-        </div>
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('all')">
+                Todas as Obras (<span id="todasCount">0</span>)
+            </button>
+            <button class="tab" onclick="showTab('favorites')">
+                Favoritos (<span id="favoritosCount">0</span>)
+            </button>
+        </div>
 
-        <!-- ===== TODAS AS OBRAS ===== -->
-        <div id="allTab" class="tab-content active">
-            <div class="obras-grid" id="obrasGrid"></div>
-        </div>
+        <div id="allTab" class="tab-content active">
+            <div class="obras-grid" id="obrasGrid"></div>
+        </div>
 
-        <!-- ===== FAVORITOS ===== -->
-        <div id="favoritesTab" class="tab-content">
-            <div class="obras-grid" id="favoritosGrid"></div>
-        </div>
-    </main>
+        <div id="favoritesTab" class="tab-content">
+            <div class="obras-grid" id="favoritosGrid"></div>
+        </div>
+    </main>
 
-    <!-- ===== MODAL DE OBRA ===== -->
-    <div class="modal" id="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="modalTitle">Adicionar Obra</h2>
-                <button class="btn-close" onclick="closeModal()">×</button>
-            </div>
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Adicionar Obra</h2>
+                <button class="btn-close" onclick="closeModal()">×</button>
+            </div>
 
-            <div class="modal-body">
-                <div class="form-group">
-                    <label>Título da Obra</label>
-                    <input type="text" id="obraTitulo" placeholder="Ex: Abaporu">
-                </div>
+            <div class="modal-body">
+                <input type="hidden" id="obraType" value="card">
 
-                <div class="form-group">
-                    <label>Artista</label>
-                    <input type="text" id="obraArtista" placeholder="Ex: Tarsila do Amaral">
-                </div>
+                <div class="form-group">
+                    <label>Título da Obra</label>
+                    <input type="text" id="obraTitulo" placeholder="Ex: Abaporu">
+                </div>
 
-                <div class="form-group">
-                    <label>Descrição</label>
-                    <textarea id="obraDescricao" placeholder="Descreva a obra..."></textarea>
-                </div>
+                <div class="form-group">
+                    <label>Artista</label>
+                    <input type="text" id="obraArtista" placeholder="Ex: Tarsila do Amaral">
+                </div>
 
-                <div class="form-group">
-                    <label>URL da Imagem</label>
-                    <input type="url" id="obraImagem" placeholder="https://exemplo.com/imagem.jpg">
-                </div>
+                <div class="form-group">
+                    <label>Descrição</label>
+                    <textarea id="obraDescricao" placeholder="Descreva a obra..."></textarea>
+                </div>
 
-                <div class="modal-actions">
-                    <button class="btn-primary" onclick="saveObra()">Salvar</button>
-                    <button class="btn-secondary" onclick="closeModal()">Cancelar</button>
-                </div>
-            </div>
-        </div>
-    </div>
+                <div class="form-group">
+                    <label>URL da Imagem</label>
+                    <input type="url" id="obraImagem" placeholder="https://exemplo.com/imagem.jpg">
+                </div>
 
-    <!-- ===== MODAL DE LOGIN DEV ===== -->
-    <div class="modal" id="devLoginModal">
-        <div class="modal-content dev-login">
-            <div class="dev-login-header">
-                <div class="dev-icon">🔓</div>
-                <h2>Login de Desenvolvedor</h2>
-                <p>Digite a senha secreta para desbloquear o modo dev</p>
-            </div>
+                <div class="form-group form-group-checkbox" style="display: none;">
+                    <input type="checkbox" id="obraIsSlide">
+                    <label for="obraIsSlide">Destaque no Carrossel (Slide)</label>
+                </div>
 
-            <div class="modal-body">
-                <div class="form-group">
-                    <input 
-                        type="password" 
-                        id="devPassword" 
-                        placeholder="Digite a senha..."
-                        class="dev-password-input"
-                    >
-                </div>
+                <div class="modal-actions">
+                    <button class="btn-primary" onclick="saveObra()">Salvar</button>
+                    <button class="btn-secondary" onclick="closeModal()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                <div class="modal-actions">
-                    <button class="btn-primary" onclick="handleDevLogin()">Entrar</button>
-                    <button class="btn-secondary" onclick="closeDevLogin()">Cancelar</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="modal" id="devLoginModal">
+        <div class="modal-content dev-login">
+            <div class="dev-login-header">
+                <div class="dev-icon">🔓</div>
+                <h2>Login de Desenvolvedor</h2>
+                <p>Digite a senha secreta para desbloquear o modo dev</p>
+            </div>
 
-    <!-- ===== FOOTER ===== -->
-    <footer>
-        <p class="dev-status" id="devStatus">✅ Modo Dev Ativo - Você pode editar tudo agora!</p>
-    </footer>
+            <div class="modal-body">
+                <div class="form-group">
+                    <input 
+                        type="password" 
+                        id="devPassword" 
+                        placeholder="Digite a senha..."
+                        class="dev-password-input"
+                    >
+                </div>
 
-    <script src="assets/js/home.js"></script>
+                <div class="modal-actions">
+                    <button class="btn-primary" onclick="handleDevLogin()">Entrar</button>
+                    <button class="btn-secondary" onclick="closeDevLogin()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p class="dev-status" id="devStatus" style="display: none;">✅ Modo Dev Ativo - Você pode editar tudo agora!</p>
+    </footer>
+
+    <script src="assets/js/home.js"></script>
 </body>
 </html>
