@@ -1,0 +1,242 @@
+/* ===================== RESET ===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===================== BODY ===================== */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+/* ===================== CABEÇALHO ===================== */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+}
+
+#logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+header h1 {
+    margin-top: 10px;
+    font-size: 2rem;
+}
+
+/* -------------------- Botões do cabeçalho -------------------- */
+.header-buttons {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.header-buttons button,
+.header-buttons a button {
+    background-color: #0162ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 6px 12px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.header-buttons button:hover,
+.header-buttons a button:hover {
+    background-color: #3d2cff;
+}
+
+.header-buttons a {
+    text-decoration: none;
+}
+
+/* ===================== LAYOUT SUPERIOR ===================== */
+.layout-superior {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+/* ===================== ASIDE ===================== */
+aside {
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px;
+    flex-shrink: 0;
+}
+
+aside h2, aside h4 {
+    margin-bottom: 10px;
+}
+
+aside ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 15px;
+}
+
+aside li {
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+}
+
+aside a {
+    text-decoration: none;
+}
+
+aside button {
+    background-color: #0162ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+aside button:hover {
+    background-color: #3d2cff;
+}
+
+/* ===================== CARROSSEL ===================== */
+.carrossel-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+.carrossel-img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.carousel-caption h5 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 5px #000;
+}
+
+.carousel-caption p {
+    font-size: 1rem;
+    text-shadow: 1px 1px 3px #000;
+}
+
+/* ===================== BOTÃO DE DETALHES ===================== */
+.botao-detalhes {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.botao-detalhes button {
+    background-color: #0162ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.botao-detalhes button:hover {
+    background-color: #3d2cff;
+}
+
+/* ===================== RESUMOS ===================== */
+.resumos-obras {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 20px 20px 20px;
+}
+
+.resumo {
+    flex: 1;
+    min-width: 300px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.resumo h3 {
+    margin-bottom: 10px;
+}
+
+/* ===================== RODAPÉ ===================== */
+footer {
+    background-color: #333;
+    color: #eee;
+    text-align: center;
+    padding: 15px 10px;
+    margin-top: auto;
+    width: 100%;
+}
+
+/* ===================== RESPONSIVO ===================== */
+@media (max-width: 992px) {
+    .layout-superior {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    aside {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .carrossel-container {
+        width: 100%;
+    }
+
+    .resumos-obras {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .resumo {
+        width: 100%;
+        max-width: 600px;
+        text-align: justify;
+    }
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .header-buttons {
+        position: static;
+        margin-top: 10px;
+    }
+
+    .header-buttons button {
+        padding: 5px 8px;
+        font-size: 0.9rem;
+        margin: 5px 3px;
+    }
+
+    .carrossel-img {
+        max-height: 300px;
+    }
+}
