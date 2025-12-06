@@ -9,10 +9,10 @@
 <body>
     <!-- ===== HEADER ===== -->
     <header id="header">
-        <div class="logo" id="logo" title="Clique 7x para surpresa 🎁">
+        <div class="logo" id="logo" title="">
             <div class="logo-icon">
                 <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                    <path d="M12 2C6.48 2 2 6.48 2 12s\4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
                 </svg>
             </div>
             <span>Artes Famosas</span>
@@ -20,7 +20,7 @@
         </div>
         
         <div class="user-menu">
-            <span class="user-name" id="userName">Visitante</span>
+            <span class="user-name" id="userName"></span>
             <span class="dev-badge" id="devBadge">DEV MODE</span>
             <button class="btn-logout" onclick="logout()">
                 <svg viewBox="0 0 24 24" fill="currentColor">
@@ -33,7 +33,7 @@
 
     <!-- ===== EASTER EGG NOTIFICATION ===== -->
     <div class="easter-egg-notification" id="easterEggNotification">
-        🎮 KONAMI CODE ATIVADO! 🎨
+         KONAMI CODE ATIVADO! 
     </div>
 
     <!-- ===== MAIN ===== -->
@@ -143,7 +143,6 @@
                         placeholder="Digite a senha..."
                         class="dev-password-input"
                     >
-                    <p class="dev-hint">💡 Dica: Nome da artista brasileira + ano (ex: artista2024)</p>
                 </div>
 
                 <div class="modal-actions">
@@ -156,7 +155,6 @@
 
     <!-- ===== FOOTER ===== -->
     <footer>
-        <p>💡 Dicas: Tente o código Konami (↑↑↓↓←→←→BA) ou clique 7x na logo!</p>
         <p class="dev-status" id="devStatus">✅ Modo Dev Ativo - Você pode editar tudo agora!</p>
     </footer>
 

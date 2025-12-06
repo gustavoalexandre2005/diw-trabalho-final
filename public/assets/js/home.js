@@ -100,15 +100,6 @@ function ativarKonamiCode() {
         notification.classList.remove('show');
     }, 5000);
     
-    const obraSecreta = {
-        id: Date.now(),
-        titulo: '🎮 Easter Egg Desbloqueado!',
-        artista: 'Konami Code Master',
-        descricao: 'Parabéns! Você descobriu o código secreto! ↑↑↓↓←→←→BA',
-        imagem: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800',
-        favorito: true
-    };
-    
     if (!obras.some(o => o.titulo.includes('Easter Egg'))) {
         obras.push(obraSecreta);
         saveObras();
@@ -162,7 +153,7 @@ function loadObras() {
                 titulo: 'Abaporu',
                 artista: 'Tarsila do Amaral',
                 descricao: 'Obra icônica do modernismo brasileiro, representa a brasilidade',
-                imagem: 'https://images.unsplash.com/photo-1577083552431-6e5fd01988ec?w=800',
+                imagem: 'https://coleccion.malba.org.ar/wp-content/uploads/2019/05/Do-Amaral-Abaporu-067-1.jpg',
                 favorito: false
             },
             {
